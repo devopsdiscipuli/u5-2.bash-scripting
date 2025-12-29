@@ -7,4 +7,4 @@ echo "upgrading installed packages"
 sudo apt-get upgrade -y
 
 echo "removing deprecated packages"
-sudo apt-get autoremove
+sudo apt-get autoremove -y
