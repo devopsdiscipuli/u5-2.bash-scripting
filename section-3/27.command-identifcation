@@ -1,0 +1,37 @@
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ 
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ 
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8
+2 5 7 8
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 echo a f h k
+2 5 7 8 echo a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8; echo a f h k
+2 5 7 8
+a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2\ 5 7 8; echo a f h k
+2 5 7 8
+a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2' '5 7 8; echo a f h k
+2 5 7 8
+a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2" "5 7 8; echo a f h k
+2 5 7 8
+a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 ; echo a f h k
+2 5 7 8
+a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 \; echo a f h k
+2 5 7 8 ; echo a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 ';' echo a f h k
+2 5 7 8 ; echo a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 ";" echo a f h k
+2 5 7 8 ; echo a f h k
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 ; echo a f h k \
+> echo 39
+2 5 7 8
+a f h k echo 39
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo 2 5 7 8 ; echo a f h k \
+> ;echo 39
+2 5 7 8
+a f h k
+39
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ 
