@@ -106,3 +106,10 @@ total 12
 -rw-rw-r-- 1 user1 user1    0 Feb  2 18:42 4
 -rw-rw-r-- 1 user1 user1    0 Feb  2 18:42 5
 user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ 
+
+
+-------------------------------------------------------------------------------
+
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ echo "${IFS@Q}"
+$' \t\n'
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3$ 
