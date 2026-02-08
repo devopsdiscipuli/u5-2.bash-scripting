@@ -1,0 +1,30 @@
+ls: cannot access '/no_dir': No such file or directory
+/var:
+backups
+cache
+crash
+lib
+local
+lock
+log
+mail
+metrics
+opt
+run
+snap
+spool
+tmp
+ls: cannot access '/no_dir2': No such file or directory
+/tmp:
+snap-private-tmp
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-colord.service-hK9qjO
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-fwupd.service-r5DEfw
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-ModemManager.service-Jg6F5V
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-polkit.service-iGVBqV
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-power-profiles-daemon.service-LfM8cH
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-switcheroo-control.service-UUn0d0
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-systemd-logind.service-cTZwIB
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-systemd-oomd.service-HFsaOE
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-systemd-resolved.service-wvZyHa
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-systemd-timesyncd.service-I6MWP7
+systemd-private-ddfbe40dba5e44b08feb85b695ea42fc-upower.service-0o93Tv

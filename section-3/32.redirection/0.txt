@@ -1,0 +1,131 @@
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 8
+drwxrwxr-x 2 user1 user1 4096 Feb  8 17:58 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ echo "test line" >> 1.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 12
+drwxrwxr-x 2 user1 user1 4096 Feb  8 17:59 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+-rw-rw-r-- 1 user1 user1   10 Feb  8 17:59 1.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ echo "test line"
+test line
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cat "test line 1" >> 1.txt
+cat: 'test line 1': No such file or directory
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cat < 1.txt 
+test line
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cat 1.txt 
+test line
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ whoami
+user1
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root
+bash: cd: /root: Permission denied
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root > errot.txt
+bash: cd: /root: Permission denied
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root 2> errot.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 16
+drwxrwxr-x 2 user1 user1 4096 Feb  8 18:09 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+-rw-rw-r-- 1 user1 user1   10 Feb  8 17:59 1.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:10 errot.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root &> /dev/null
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 16
+drwxrwxr-x 2 user1 user1 4096 Feb  8 18:09 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+-rw-rw-r-- 1 user1 user1   10 Feb  8 17:59 1.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:10 errot.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root
+bash: cd: /root: Permission denied
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root &> ./error2.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 20
+drwxrwxr-x 2 user1 user1 4096 Feb  8 18:21 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+-rw-rw-r-- 1 user1 user1   10 Feb  8 17:59 1.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:21 error2.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:10 errot.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cd /root > ./error3.txt 2>&1
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 24
+drwxrwxr-x 2 user1 user1 4096 Feb  8 18:23 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+-rw-rw-r-- 1 user1 user1   10 Feb  8 17:59 1.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:21 error2.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:23 error3.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:10 errot.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cat error2.txt 
+bash: cd: /root: Permission denied
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cat error3.txt 
+bash: cd: /root: Permission denied
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ date ; cd /root &> ./error4.txt
+Sun Feb  8 06:28:09 PM IST 2026
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ cat error4.txt 
+bash: cd: /root: Permission denied
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ls /etc /var
+/etc:
+adduser.conf            dhcpcd.conf           issue.net            os-release     snmp
+alsa                    dictionaries-common   kernel               PackageKit     speech-dispatcher
+alternatives            dpkg                  kerneloops.conf      pam.conf       ssh
+anacrontab              e2scrub.conf          krb5.conf.d          pam.d          ssl
+apg.conf                emacs                 ldap                 papersize      sssd
+apm                     environment           ld.so.cache          passwd         subgid
+apparmor                environment.d         ld.so.conf           passwd-        subgid-
+apparmor.d              ethertypes            ld.so.conf.d         pcmcia         subuid
+apport                  fonts                 legal                perl           subuid-
+apt                     fprintd.conf          libao.conf           pki            sudo.conf
+avahi                   fstab                 libaudit.conf        plymouth       sudoers
+bash.bashrc             fuse.conf             libblockdev          pm             sudoers.d
+bash_completion         fwupd                 libibverbs.d         pnm2ppa.conf   sudo_logsrvd.conf
+bash_completion.d       gai.conf              libnl-3              polkit-1       supercat
+bindresvport.blacklist  gdb                   libpaper.d           ppp            sysctl.conf
+binfmt.d                gdm3                  locale.alias         printcap       sysctl.d
+bluetooth               geoclue               locale.conf          profile        sysstat
+brlapi.key              ghostscript           locale.gen           profile.d      systemd
+brltty                  glvnd                 localtime            protocols      terminfo
+brltty.conf             gnome                 logcheck             pulse          thermald
+ca-certificates         gnome-remote-desktop  login.defs           python3        timezone
+ca-certificates.conf    gnutls                logrotate.conf       python3.12     tmpfiles.d
+chatscripts             groff                 logrotate.d          rc0.d          ubuntu-advantage
+cloud                   group                 lsb-release          rc1.d          ucf.conf
+colord                  group-                machine-id           rc2.d          udev
+console-setup           grub.d                magic                rc3.d          udisks2
+cracklib                gshadow               magic.mime           rc4.d          ufw
+credstore               gshadow-              manpath.config       rc5.d          update-manager
+credstore.encrypted     gss                   mime.types           rc6.d          update-motd.d
+cron.d                  gtk-2.0               mke2fs.conf          rcS.d          update-notifier
+cron.daily              gtk-3.0               ModemManager         resolv.conf    UPower
+cron.hourly             hdparm.conf           modprobe.d           rmt            usb_modeswitch.conf
+cron.monthly            host.conf             modules              rpc            usb_modeswitch.d
+crontab                 hostname              modules-load.d       rsyslog.conf   vconsole.conf
+cron.weekly             hosts                 mtab                 rsyslog.d      vdpau_wrapper.cfg
+cron.yearly             hosts.allow           nanorc               rygel.conf     vim
+cups                    hosts.deny            netconfig            sane.d         vtrgb
+cupshelpers             hp                    netplan              security       vulkan
+dbus-1                  ifplugd               network              selinux        wgetrc
+dconf                   init                  networkd-dispatcher  sensors3.conf  whoopsie
+debconf.conf            init.d                NetworkManager       sensors.d      wpa_supplicant
+debian_version          initramfs-tools       networks             services       X11
+debuginfod              inputrc               newt                 sgml           xattr.conf
+default                 insserv.conf.d        nftables.conf        shadow         xdg
+deluser.conf            ipp-usb               nsswitch.conf        shadow-        xml
+depmod.d                iproute2              openvpn              shells         zsh_command_not_found
+dhcp                    issue                 opt                  skel
+
+/var:
+backups  cache  crash  lib  local  lock  log  mail  metrics  opt  run  snap  spool  tmp
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ls /etc /no_such_dir &> both.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ll
+total 32
+drwxrwxr-x 2 user1 user1 4096 Feb  8 18:35 ./
+drwxrwxr-x 5 user1 user1 4096 Feb  8 17:58 ../
+-rw-rw-r-- 1 user1 user1   10 Feb  8 17:59 1.txt
+-rw-rw-r-- 1 user1 user1 2318 Feb  8 18:35 both.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:21 error2.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:23 error3.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:28 error4.txt
+-rw-rw-r-- 1 user1 user1   35 Feb  8 18:10 errot.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ls /var /no_dir &> both.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ ls /tmp /no_dir2 &>> both.txt
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-3/32.redirection$ 
