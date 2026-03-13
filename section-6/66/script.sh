@@ -1,15 +1,15 @@
 #!/bin/bash
 
-while getopts "c:f:" var1; do
-    case "$var1" in
+while getopts "c:f:" opt; do
+    case "$opt" in
         c)
-            result=$(echo "scale=2; ($OPTARG * (9/5)) + 32" | bc)
+            result=$(echo "scale=9; ($OPTARG * (9/5)) + 32" | bc)
             ;;
         f)
-            command2
+            result=$(echo "scale=9; ($OPTARG - 32) * (5/9)" | bc)
             ;;
         *)
-            echo "$var1"
+            echo "$opt"
             ;;                        
     esac
     echo "$result"
