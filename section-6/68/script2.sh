@@ -2,6 +2,8 @@
 
 # purpose - build a countdown timer
 # if total time = 0 s, then default to 5 sec
+# show usage of script to user
+# this is sisyphus code
 
 timer=0
 
@@ -25,4 +27,10 @@ while [ $timer -gt 0 ]; do
     echo "$timer"
     timer=$(( $timer - 1 ))
     sleep 1s
+    echo "showing $timer" 
+    
+    if [ $timer -eq 0 ]; then
+        timer=$(( $timer + 5 ))
+        echo "$timer"
+    fi   
 done
