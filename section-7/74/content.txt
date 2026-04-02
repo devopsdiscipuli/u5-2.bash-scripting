@@ -1,0 +1,7 @@
+mon space1
+tue space2
+wed
+thu
+fri
+sat
+sun
