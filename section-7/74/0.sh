@@ -54,3 +54,24 @@ user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${myarray[@
 user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${myarray[@]:-2}
 13 14 15 16 17 18 19 21 22 23 2
 user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ 
+
+------------------------------------------------------------------------------------
+
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ months=(January February March April May June July August September October November December)
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo $months 
+January
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${months[@]} 
+January February March April May June July August September October November December
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${!months[@]} 
+0 1 2 3 4 5 6 7 8 9 10 11
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ unset months[11]
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${months[@]} 
+January February March April May June July August September October November
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${!months[@]} 
+0 1 2 3 4 5 6 7 8 9 10
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ unset months[3]
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${months[@]} 
+January February March May June July August September October November
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ echo ${!months[@]} 
+0 1 2 4 5 6 7 8 9 10
+user1@user1-VM:~/Desktop/U5-bash-scripts-practice/section-7/74$ 

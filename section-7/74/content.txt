@@ -1,5 +1,5 @@
-mon space1
-tue space2
+mon
+tue
 wed
 thu
 fri
